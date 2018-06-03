@@ -28,7 +28,7 @@ client.on('message', function(message) {
   const args = message.content.split(' ').slice(1).join(" ");
 
   if (mess.startsWith(prefix + "oynat")) {
-    if (member.voiceChannel || client.guilds.get("338433261934215171").voiceConnection != null) {
+    if (member.voiceChannel || client.guilds.get("338433261934215171")voiceConnection != null) {
       if (queue.length > 0 || isPlaying) {
         getID(args, function(id) {
           add_to_queue(id);
