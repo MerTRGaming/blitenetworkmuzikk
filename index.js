@@ -22,9 +22,6 @@ var skippers = [];
 
 client.login(discord_token);
 
-client.user.setStatus("online");
-client.user.setGame(`-komutlar|blitenetworkbot.com.tr.ht ziyaret edin notumuz var!`);
-
 client.on('message', function(message) {
   const member = message.member;
   const mess = message.content.toLowerCase();
