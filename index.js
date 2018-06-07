@@ -55,7 +55,7 @@ client.on('message', function(message) {
     if (skippers.indexOf(message.author.id) === -1) {
       skippers.push(message.author.id);
       skipReq++;
-      if (skipReq >= Math.ceil((voiceChannel.members.size - 1) / 1) {
+      if (skipReq >= Math.ceil((voiceChannel.members.size - 1) / 1) 
         skip_song(message);
         message.reply(" Atlamanız onaylandı, şimdi atlanılıyor.");
       } else {
