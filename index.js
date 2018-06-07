@@ -49,20 +49,20 @@ client.on('message', function(message) {
         });
       }
     } else {
-      message.reply(" Bir ses kanalında olmanız gerekiyor!");
+      message.reply(" Bunu yapmak için bir kanala girmen gerekior!");
     }
   } else if (mess.startsWith(prefix + "atla")) {
     if (skippers.indexOf(message.author.id) === -1) {
       skippers.push(message.author.id);
-      skipReq++;
-      if (skipReq >= Math.ceil((voiceChannel.members.size - 1) / 1)) {
+      skipReq;
+      if (skipReq >= Math.ceil((voiceChannel.members.size - 1) / 1) {
         skip_song(message);
-        message.reply(" Atlamanız onaylandı. Şimdi atlatılıyor");
+        message.reply(" Atlamanız onaylandı, şimdi atlanılıyor.");
       } else {
-        message.reply(" Atlamanız Onaylandı **" + Math.ceil((voiceChannel.members.size - 1) / 1) - skipReq + "** more skip votes!");
+        message.reply(" Atlamanız onaylanamadı, **" + Math.ceil((voiceChannel.members.size - 1) / 1) - skipReq + "** oy lazım!");
       }
     } else {
-      message.reply(" Zaten atlamak için oy verdiniz!");
+      message.reply(" Zaten atlatmak için oy verdiniz!");
     }
   } else if (mess.startsWith(prefix + "temizle")) {
     while (queue.length > 0) {
@@ -85,12 +85,12 @@ client.on('message', function(message) {
     })
 
   }
-   else if(commandName === Configuration.commandChar + 'stop'){
-	        	handlers.stopAudioFileHandler(channelID, rawEvent, userID);
-};
+
+
+});
 
 client.on('ready', function() {
-  console.log('Ben Hazırım!');
+  console.log('Hazırım!');
 
 });
 
