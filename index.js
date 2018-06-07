@@ -85,8 +85,8 @@ client.on('message', function(message) {
     })
 
   }
-  		} else if(commandName === Configuration.commandChar + 'stop'){
-			handlers.stopAudioFileHandler(channelID, rawEvent, userID);
+  		 else if(commandName === Configuration.commandChar + 'stop'){
+	        	handlers.stopAudioFileHandler(channelID, rawEvent, userID);
 
 
 });
