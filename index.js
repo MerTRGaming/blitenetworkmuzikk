@@ -34,7 +34,7 @@ client.on('message', function(message) {
           add_to_queue(id);
           fetchVideoInfo(id, function(err, videoInfo) {
             if (err) throw new Error(err);
-            message.reply(" Kuyruğa Eklendi: **" + videoInfo.title + "**");
+            message.reply(" Kuyruğa eklendi: **" + videoInfo.title + "**");
           });
         });
       } else {
@@ -49,20 +49,20 @@ client.on('message', function(message) {
         });
       }
     } else {
-      message.reply(" Bunu yapmak için bir kanala girmen gerekior!");
+      message.reply(" Bunu yapmak için bir kanala katılmalısın!");
     }
   } else if (mess.startsWith(prefix + "atla")) {
     if (skippers.indexOf(message.author.id) === -1) {
       skippers.push(message.author.id);
       skipReq++;
-      if (skipReq >= Math.ceil((voiceChannel.members.size - 1) / 1) 
+      if (skipReq >= Math.ceil((voiceChannel.members.size - 1) / 2)) {
         skip_song(message);
-        message.reply(" Atlamanız onaylandı, şimdi atlanılıyor.");
+        message.reply(" Atlatma başarılı, şimdi atlatılıyor.");
       } else {
-        message.reply(" Atlamanız onaylanamadı, **" + Math.ceil((voiceChannel.members.size - 1) / 1) - skipReq + "** oy lazım!");
+        message.reply(" Atlattırılamadı, **" + Math.ceil((voiceChannel.members.size - 1) / 2) - skipReq + "** oy lazım!");
       }
     } else {
-      message.reply(" Zaten atlatmak için oy verdiniz!");
+      message.reply(" Atlatmak için zaten oy verdin!");
     }
   } else if (mess.startsWith(prefix + "temizle")) {
     while (queue.length > 0) {
@@ -90,7 +90,7 @@ client.on('message', function(message) {
 });
 
 client.on('ready', function() {
-  console.log('Hazırım!');
+  console.log('I am ready');
 
 });
 
